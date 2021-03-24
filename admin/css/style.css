@@ -4,13 +4,6 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-html[data-theme="light"] {
-	--primary: #000;
-	--secondary: #ddd;
-	--red: #e50914;
-	--dark-red: #a30810;
-	scroll-behavior: smooth;
-}
 html {
 	--primary: #ddd;
 	--secondary: #000;
@@ -21,7 +14,6 @@ html {
 body {
 	font-family: "EB Garamond", serif;
 	background-color: var(--primary);
-	/* color: var(--secondary); */
 	font-size: 1rem;
 	font-weight: 400;
 	letter-spacing: 0.5px;

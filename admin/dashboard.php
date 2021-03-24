@@ -1,12 +1,10 @@
-<?php
-require_once("includes/dbcon.rec.php");
-?>
+<?php require_once("../includes/dbcon.rec.php"); ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-     <?php include_once("includes/head.inc.php");
+     <?php include_once("../includes/head.inc.php");
      ?>
      <style>
           .dashboard__heading {
@@ -29,7 +27,7 @@ require_once("includes/dbcon.rec.php");
           }
 
           .userdetails__table tr:nth-child(even) {
-               background-color: #d4d4d4;
+               background-color: #c0c0c0;
           }
 
           .userdetails__table tr:hover {
@@ -58,7 +56,7 @@ require_once("includes/dbcon.rec.php");
                          }
                     }  ?></h1>
           </div>
-          <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+          <form style="display: inline;" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                <label for="choice">Select Option: </label>
                <select name="choice" id="choice" style="border-radius: 3px; padding:5px;">
                     <option value="">Select...</option>
@@ -67,7 +65,7 @@ require_once("includes/dbcon.rec.php");
                </select>
                <input class="btn-all" type="submit" value="Submit" name="submit">
           </form>
-
+          <a class="btn-all" style="float: right;" href="../logout.php"> Logout </a>
 
           <?php
           if (isset($_POST['submit'])) {
@@ -86,7 +84,6 @@ require_once("includes/dbcon.rec.php");
                     $users = $stmt->fetchAll();
           ?>
                     <div class="dashboard__heading">
-                         <a class="btn-all" href="logout.php"> Logout </a>
                          <a class="btn-all" href="add-user.php"> Add User </a>
                     </div>
                     <div style="overflow-x:auto;">
@@ -139,8 +136,7 @@ require_once("includes/dbcon.rec.php");
                     $books = $stmt->fetchAll();
           ?>
                     <div class="dashboard__heading">
-                         <a class="btn-all" href="logout.php"> Logout </a>
-                         <a class="btn-all" href="add-book"> Add Book </a>
+                         <a class="btn-all" href="add-book.php"> Add Book </a>
                     </div>
                     <div style="overflow-x:auto;">
                          <table class="userdetails__table">
@@ -192,7 +188,7 @@ require_once("includes/dbcon.rec.php");
           }
           ?>
      </div>
-     <?php require_once("includes/footer.inc.php"); ?>
+     <?php require_once("../includes/footer.inc.php"); ?>
 </body>
 
 </html>

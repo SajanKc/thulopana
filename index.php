@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$logged_user = "";
 if (isset($_SESSION['logged_user'])) {
      $logged_user = $_SESSION['logged_user'];
 }

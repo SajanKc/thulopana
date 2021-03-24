@@ -1,11 +1,11 @@
 <?php
 require_once("../includes/dbcon.rec.php");
-// require_once "includes/auth.php";
+// require_once "../includes/auth.php";
 ?>
 <html>
 
 <head>
-     <?php include_once("includes/head.inc.php"); ?>
+     <?php include_once("../includes/head.inc.php"); ?>
 </head>
 
 <body>
@@ -60,7 +60,7 @@ require_once("../includes/dbcon.rec.php");
                          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                               <path fill="currentColor" d="M5,9.5L7.5,14H2.5L5,9.5M3,4H7V8H3V4M5,20A2,2 0 0,0 7,18A2,2 0 0,0 5,16A2,2 0 0,0 3,18A2,2 0 0,0 5,20M9,5V7H21V5H9M9,19H21V17H9V19M9,13H21V11H9V13Z" />
                          </svg>
-                         <select class="input-field" name="role" id="role">
+                         <select class="input-field" name="role" id="role" required>
                               <option value=""> Role </option>
                               <option value="1"> Admin </option>
                               <option value="2"> Buyer </option>
@@ -76,13 +76,15 @@ require_once("../includes/dbcon.rec.php");
 
                     <input type="submit" class="btn btn-all register_btn" value="Add">
                     <input type="reset" class="btn btn-all register_btn" value="Reset">
-                    <input type="button" class="btn btn-all register_btn" value="Cancel">
-
+                    <input type="button" class="btn btn-all register_btn" value="Cancel" onclick="return cancel();">
                </form>
           </div>
           <!-- custom script -->
-          <script src="js/script.js"></script>
-
+          <script>
+               function cancel() {
+                    window.location.assign('dashboard.php');
+               }
+          </script>
      <?php } ?>
 </body>
 
