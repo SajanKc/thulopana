@@ -1,9 +1,13 @@
 <?php
 session_start();
-$logged_user = $_SESSION['logged_user'];
+
+if (isset($_SESSION['logged_user'])) {
+     $logged_user = $_SESSION['logged_user'];
+}
+
 require_once("includes/dbcon.rec.php");
 
-$query = "SELECT * FROM `book` limit 20";
+$query = "SELECT * FROM `book` limit 10";
 $stmt = $pdo->prepare($query);
 $stmt->execute();
 $books = $stmt->fetchAll();
@@ -52,41 +56,11 @@ $books = $stmt->fetchAll();
                <div class="hr__scroll">
                     <?php
                     foreach ($books as $book) {
-                         // echo '<a href="book-details.php?id=' . $book['b_id'] . '">';
-                         // echo '<img class="view__book" src="images/' . $book['b_img'] . '" />';
-                         // echo '</a>';
+                         echo '<a href="book-details.php?id=' . $book['b_id'] . '">';
+                         echo '<img class="view-book" src="images/' . $book['image'] . '" />';
+                         echo '</a>';
                     }
                     ?>
-                    <a href="#">
-                         <img src="images/books/richdadpoordad.jpg" class="view-book" alt="">
-                    </a>
-                    <a href="#">
-                         <img src="images/books/jaws.jpg" class="view-book" alt="">
-                    </a>
-                    <a href="#">
-                         <img src="images/books/youcanwin.jpg" class="view-book" alt="">
-                    </a>
-                    <a href="#">
-                         <img src="images/books/wheretheforest.jpg" class="view-book" alt="">
-                    </a>
-                    <a href="#">
-                         <img src="images/books/thinkingofdrugs.jpg" class="view-book" alt="">
-                    </a>
-                    <a href="#">
-                         <img src="images/books/jaws.jpg" class="view-book" alt="">
-                    </a>
-                    <a href="#">
-                         <img src="images/books/youcanwin.jpg" class="view-book" alt="">
-                    </a>
-                    <a href="#">
-                         <img src="images/books/wheretheforest.jpg" class="view-book" alt="">
-                    </a>
-                    <a href="#">
-                         <img src="images/books/thinkingofdrugs.jpg" class="view-book" alt="">
-                    </a>
-                    <a href="#">
-                         <img src="images/books/jaws.jpg" class="view-book" alt="">
-                    </a>
                </div>
           </div>
      </section>
