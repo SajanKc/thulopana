@@ -9,13 +9,12 @@ require('includes/dbcon.rec.php');
 </head>
 
 <body>
-     <?php include_once("includes/theme-toggle.inc.php"); ?>
      <div class="login">
-          <form class="login__card" action="process/process_login.php" method="POST">
+          <form class="login__card" action="process-login.php" method="POST">
                <div class="form__heading">
                     <h2 class="card__heading">Welcome Back To!</h2>
                     <p class="card__subheading">
-                         <a href="index.php"> KitabPasal </a>
+                         <a href="index.php"> ThuloPana </a>
                     </p>
                </div>
                <div class="input__group">

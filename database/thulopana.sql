@@ -8,7 +8,7 @@ USE thulopana;
 CREATE TABLE IF NOT EXISTS `user` (
 	`uid` INT NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(20) NOT NULL,
-	`password` VARCHAR(25) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
     `email` VARCHAR(30) NOT NULL,
     `phone` varchar(15) NOT NULL,
     `role` INT NOT NULL,
@@ -28,10 +28,10 @@ SELECT * FROM user;
 
 -- Inserting data into user table
 INSERT INTO user VALUES
-	(1,'sajankc','1234','sazankce@gmail.com','9843337779',1,now(),now()),
-	(2,'ngimasherpa','1234','sazankce@gmail.com','9842868111',1,now(),now()),	
-	(3,'namrata','1234','namrata@gmail.com','9841112223',2,now(),now()),	
-	(4,'muna','1234','muna@yahoo.com','9846667778',3,now(),now());
+	(1,'sajankc','81dc9bdb52d04dc20036dbd8313ed055','sazankce@gmail.com','9843337779',1,now(),now()),
+	(2,'ngimasherpa','81dc9bdb52d04dc20036dbd8313ed055','sazankce@gmail.com','9842868111',1,now(),now()),	
+	(3,'namrata','81dc9bdb52d04dc20036dbd8313ed055','namrata@gmail.com','9841112223',2,now(),now()),	
+	(4,'muna','81dc9bdb52d04dc20036dbd8313ed055','muna@yahoo.com','9846667778',3,now(),now());
 
 -- ------------------------------------------
 -- Creating role table
@@ -47,12 +47,15 @@ CREATE TABLE IF NOT EXISTS `role` (
 INSERT INTO role VALUES
 	(1,'admin'),
     (2,'buyer'),
-    (3,'saler');
-
+    (3,'seller');
+    
 -- View all records of role table    
 SELECT * FROM role;
 
--- Table structure for table `book`
+-- ------------------------------------------
+-- Creating book table
+-- ------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `book` (
   `b_id` int(4) NOT NULL AUTO_INCREMENT,
   `b_name` varchar(60) NOT NULL,

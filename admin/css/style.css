@@ -4,14 +4,14 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-html {
-	--primary: #fff;
-	--secondary: #000;
+html[data-theme="light"] {
+	--primary: #000;
+	--secondary: #ddd;
 	--red: #e50914;
 	--dark-red: #a30810;
 	scroll-behavior: smooth;
 }
-html[data-theme="light"] {
+html {
 	--primary: #ddd;
 	--secondary: #000;
 	--red: #e50914;
