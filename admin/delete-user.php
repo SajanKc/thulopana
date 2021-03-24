@@ -5,7 +5,7 @@ require_once("../includes/dbcon.rec.php");
 <html>
 
 <head>
-     <?php include_once("../includes/head.inc.php"); ?>
+     <?php include_once("includes/head.inc.php"); ?>
 </head>
 
 <body>

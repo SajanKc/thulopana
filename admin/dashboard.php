@@ -4,43 +4,8 @@
 <html>
 
 <head>
-     <?php include_once("../includes/head.inc.php");
+     <?php include_once("includes/head.inc.php");
      ?>
-     <style>
-          .dashboard__heading {
-               display: flex;
-               justify-content: space-between;
-               margin-top: 10px;
-          }
-
-          .userdetails__table {
-               width: 100%;
-               border-collapse: collapse;
-               margin: 10px 0;
-          }
-
-          .userdetails__table th,
-          .userdetails__table td {
-               border: 1px solid black;
-               padding: 10px;
-               white-space: nowrap;
-          }
-
-          .userdetails__table tr:nth-child(even) {
-               background-color: #c0c0c0;
-          }
-
-          .userdetails__table tr:hover {
-               background-color: #aaa;
-          }
-
-          .userdetails__table th {
-               padding-top: 12px;
-               padding-bottom: 12px;
-               background-color: #4CAF50;
-               color: white;
-          }
-     </style>
 </head>
 
 <body>
@@ -191,7 +156,7 @@
           }
           ?>
      </div>
-     <?php require_once("../includes/footer.inc.php"); ?>
+     <?php require_once("includes/footer.inc.php"); ?>
 </body>
 
 </html>
