@@ -9,5 +9,3 @@
           </p>
      </div>
 </footer>
-<!-- custom script -->
-<script src="js/script.js"></script>

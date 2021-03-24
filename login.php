@@ -40,8 +40,6 @@ require('includes/dbcon.rec.php');
                </p>
           </form>
      </div>
-     <!-- custom script -->
-     <script src="js/script.js"></script>
 </body>
 
 </html>
