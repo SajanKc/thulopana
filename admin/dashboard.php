@@ -147,6 +147,7 @@
                                    <th>Title</th>
                                    <th>Author</th>
                                    <th>Category</th>
+                                   <th>Published Year</th>
                                    <th>Type</th>
                                    <th>Pages</th>
                                    <th>Price</th>
@@ -169,12 +170,14 @@
                                         <td><?php echo $book['title'] ?></td>
                                         <td><?php echo $book['author'] ?></td>
                                         <td><?php echo $category['c_name'] ?></td>
+                                        <td><?php echo $book['published_year'] ?></td>
                                         <td><?php echo $book['type'] ?></td>
                                         <td><?php echo $book['pages'] ?></td>
                                         <td><?php echo "Rs. " . $book['price'] ?></td>
                                         <td><?php echo $book['uploaded_at'] ?></td>
                                         <td><?php echo $book['updated_at'] ?></td>
                                         <td>
+                                             <a class="btn-all" href="view-book.php?id=<?php echo $book['b_id']; ?>">View</a>
                                              <a class="btn-all" href="edit-book.php?id=<?php echo $book['b_id']; ?>">Edit</a>
                                              <?php echo "<a class='btn-all' onClick=\"javascript: return confirm('Are you sure you want to delete this user ?');\" href='delete-book.php?id=" . $book['b_id'] . "'>Delete</a>"; ?>
                                         </td>
