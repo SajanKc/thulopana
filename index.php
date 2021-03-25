@@ -30,7 +30,7 @@ $books = $stmt->fetchAll();
                     <h2 style="font-size:4rem; color:white; text-shadow: 2px 2px 8px #FF0000;">ThuloPana</h2>
                </li>
                <li>
-                    <?php if ($logged_user === 'guest') {
+                    <?php if ($logged_user === 'guest' || $logged_user === "") {
                          echo '<a class="btn-all" href="login.php"> Login </a>';
                     } else {
                          echo '<a class="btn-all" href="logout.php"> Logout </a>';
