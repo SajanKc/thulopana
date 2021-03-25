@@ -159,6 +159,11 @@ require_once("includes/auth.php");
           ?>
      </div>
      <?php require_once("includes/footer.inc.php"); ?>
+     <script>
+          if (window.history.replaceState) {
+               window.history.replaceState(null, null, window.location.href);
+          }
+     </script>
 </body>
 
 </html>
