@@ -56,7 +56,7 @@ $books = $stmt->fetchAll();
                <div class="hr__scroll">
                     <?php
                     foreach ($books as $book) {
-                         echo '<a href="book-details.php?id=' . $book['b_id'] . '">';
+                         echo '<a href="view-book.php?id=' . $book['b_id'] . '">';
                          echo '<img class="view-book" src="images/' . $book['image'] . '" />';
                          echo '</a>';
                     }
