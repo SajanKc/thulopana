@@ -9,6 +9,7 @@
 </head>
 
 <body>
+     <?php include_once("includes/navbar.inc.php"); ?>
      <div class="container">
           <div>
                <h1 style="margin: 10px 0;">Admin Dashboard
@@ -30,8 +31,6 @@
                </select>
                <input class="btn-all" type="submit" value="Submit" name="submit">
           </form>
-          <a class="btn-all" style="float: right;" href="../logout.php"> Logout </a>
-
           <?php
           if (isset($_POST['submit'])) {
                if ($_POST['choice'] === '') {
@@ -143,7 +142,7 @@
                                         <td><?php echo $book['uploaded_at'] ?></td>
                                         <td><?php echo $book['updated_at'] ?></td>
                                         <td>
-                                             <a class="btn-all" href="view-book.php?id=<?php echo $book['b_id']; ?>">View</a>
+                                             <a class="btn-all" href="../view-book.php?id=<?php echo $book['b_id']; ?>">View</a>
                                              <a class="btn-all" href="edit-book.php?id=<?php echo $book['b_id']; ?>">Edit</a>
                                              <?php echo "<a class='btn-all' onClick=\"javascript: return confirm('Are you sure you want to delete this user ?');\" href='delete-book.php?id=" . $book['b_id'] . "'>Delete</a>"; ?>
                                         </td>

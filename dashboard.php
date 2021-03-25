@@ -1,7 +1,4 @@
-<?php
-require_once("includes/dbcon.rec.php");
-session_start();
-?>
+<?php require_once("includes/dbcon.rec.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -11,6 +8,7 @@ session_start();
 </head>
 
 <body>
+     <?php include_once("includes/navbar.inc.php"); ?>
      <div class="container">
           <div>
                <h1 style="margin: 10px 0;">Seller Dashboard </h1>
@@ -20,7 +18,6 @@ session_start();
                     }  ?>
                </h2>
           </div>
-          <a class="btn-all" style="float: right;" href="logout.php"> Logout </a>
           <?php
           $query = "SELECT * FROM `book`";
           $stmt = $pdo->prepare($query);

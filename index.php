@@ -1,10 +1,4 @@
 <?php
-session_start();
-$logged_user = "";
-if (isset($_SESSION['logged_user'])) {
-     $logged_user = $_SESSION['logged_user'];
-}
-
 require_once("includes/dbcon.rec.php");
 
 $query = "SELECT * FROM `book` ORDER BY `uploaded_at` DESC limit 10";
@@ -17,28 +11,11 @@ $books = $stmt->fetchAll();
 <html>
 
 <head>
-     <?php include_once("includes/head.inc.php");
-     ?>
+     <?php include_once("includes/head.inc.php"); ?>
 </head>
 
 <body>
-     <!-- Home Section Started -->
-     <div class="container">
-          <ul class="navbar">
-               <li class="logo">
-                    <!-- <img src="images/brand-logo.png" alt="logo here" /> -->
-                    <h2 style="font-size:4rem; color:white; text-shadow: 2px 2px 8px #FF0000;">ThuloPana</h2>
-               </li>
-               <li>
-                    <?php if ($logged_user === 'guest' || $logged_user === "") {
-                         echo '<a class="btn-all" href="login.php"> Login </a>';
-                    } else {
-                         echo '<a class="btn-all" href="logout.php"> Logout </a>';
-                    }
-                    ?>
-               </li>
-          </ul>
-     </div>
+     <?php include_once("includes/navbar.inc.php"); ?>
      <div class="main">
           <form class="main__area" method="GET" action="search.php?search=">
                <h2>Unlimited books, magazines <br />newspapers, and more.</h2>

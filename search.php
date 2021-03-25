@@ -1,18 +1,4 @@
-<?php
-session_start();
-require_once("includes/dbcon.rec.php");
-
-$search = isset($_GET['q']) ? $_GET['q'] : '';
-if ($search === "") {
-     header('location: index.php');
-}
-
-$query = "SELECT * FROM `book` WHERE `title` LIKE '%$search%' OR `author` LIKE '%$search%' OR `isbn` LIKE '%$search%' LIMIT 10";
-
-$stmt = $pdo->prepare($query);
-$stmt->execute();
-$books = $stmt->fetchAll();
-?>
+<?php require_once("includes/dbcon.rec.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -22,6 +8,19 @@ $books = $stmt->fetchAll();
 </head>
 
 <body>
+     <?php include_once("includes/navbar.inc.php"); ?>
+     <?php
+     $search = isset($_GET['q']) ? $_GET['q'] : '';
+     if ($search === "") {
+          header('location: index.php');
+     }
+
+     $query = "SELECT * FROM `book` WHERE `title` LIKE '%$search%' OR `author` LIKE '%$search%' OR `isbn` LIKE '%$search%' LIMIT 10";
+
+     $stmt = $pdo->prepare($query);
+     $stmt->execute();
+     $books = $stmt->fetchAll();
+     ?>
      <div style="overflow-x:auto;">
           <table class="userdetails__table">
                <tr>
