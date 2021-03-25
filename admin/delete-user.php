@@ -1,7 +1,8 @@
 <?php
 require_once("../includes/dbcon.rec.php");
-// require_once "includes/auth.php";
+require_once("includes/auth.php");
 ?>
+<!DOCTYPE html>
 <html>
 
 <head>

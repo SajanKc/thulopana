@@ -104,7 +104,7 @@ And their two-years-collage-romance starts... ',
 (4, 3, '9937905877' , 'Palpasa Café', 'Felicitated by Madan Purashkar in the year 2005, Palpasa Cafe, a novel by Narayan Wagle, is one stop for readers of all kinds and ages. 
 The editor of Kantipur Daily, Wagle novel is  set during the 10-year-long Maoists insurgency in Nepal.',
 'Narayan Wagle', '19', 'new', 240, 350, 'upload_image/palpasaCafe.jpg', 2008, now(), now()), 
-(5, 3, '9993329053' , 'Radha', 'Radharepresents an example of an outstanding nepali novel. This Novel is written by Krishna Dharabasi.
+(5, 3, '9993329053' , 'Radha', 'Radha represents an example of an outstanding nepali novel. This Novel is written by Krishna Dharabasi.
 It plots the story of ancient epic Mahabharat with some changes that are not included in that epic. 
 However the character Radha is very famous for the love relationship with Krishna in Hindu religion, 
 she has been left far behind in the story of Mahabharat.
