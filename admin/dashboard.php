@@ -106,7 +106,7 @@
                     <div style="overflow-x:auto;">
                          <table class="userdetails__table">
                               <tr>
-                                   <th>#</th>
+                                   <th>SN</th>
                                    <th>Image</th>
                                    <th>ISBN</th>
                                    <th>Title</th>
@@ -120,7 +120,8 @@
                                    <th>Updated At</th>
                                    <th>Action</th>
                               </tr>
-                              <?php foreach ($books as $book) { ?>
+                              <?php $i = 1;
+                              foreach ($books as $book) { ?>
                                    <?php
                                    $q = "SELECT c.c_name FROM book b LEFT JOIN category c ON b.category = c.c_id WHERE b.b_id = :bookid";
                                    $stmt = $pdo->prepare($q);
@@ -129,14 +130,14 @@
                                    $category = $stmt->fetch();
                                    ?>
                                    <tr>
-                                        <td><?php echo $book['b_id'] ?></td>
+                                        <td><?php echo $i++; ?></td>
                                         <td><?php echo '<img src="../images/' . $book['image'] . '" />'; ?></td>
                                         <td><?php echo $book['isbn'] ?></td>
-                                        <td><?php echo $book['title'] ?></td>
-                                        <td><?php echo $book['author'] ?></td>
-                                        <td><?php echo $category['c_name'] ?></td>
+                                        <td><?php echo ucwords(strtolower($book['title'])) ?></td>
+                                        <td><?php echo ucwords(strtolower($book['author'])) ?></td>
+                                        <td><?php echo ucwords(strtolower($category['c_name'])) ?></td>
                                         <td><?php echo $book['published_year'] ?></td>
-                                        <td><?php echo $book['type'] ?></td>
+                                        <td><?php echo ucwords(strtolower($book['type'])) ?></td>
                                         <td><?php echo $book['pages'] ?></td>
                                         <td><?php echo "Rs. " . $book['price'] ?></td>
                                         <td><?php echo $book['uploaded_at'] ?></td>
