@@ -29,7 +29,7 @@ SELECT * FROM user;
 -- Inserting data into user table
 INSERT INTO user VALUES
 	(1,'sajankc','81dc9bdb52d04dc20036dbd8313ed055','sazankce@gmail.com','9843337779',1,now(),now()),
-	(2,'ngimasherpa','81dc9bdb52d04dc20036dbd8313ed055','sazankce@gmail.com','9842868111',1,now(),now()),	
+	(2,'ngimasherpa','81dc9bdb52d04dc20036dbd8313ed055','ngima@gmail.com','9842868111',1,now(),now()),	
 	(3,'namrata','81dc9bdb52d04dc20036dbd8313ed055','namrata@gmail.com','9841112223',2,now(),now()),	
 	(4,'muna','81dc9bdb52d04dc20036dbd8313ed055','muna@yahoo.com','9846667778',3,now(),now());
 

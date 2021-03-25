@@ -7,7 +7,7 @@ if (isset($_SESSION['logged_user'])) {
 
 require_once("includes/dbcon.rec.php");
 
-$query = "SELECT * FROM `book` limit 10";
+$query = "SELECT * FROM `book` ORDER BY `uploaded_at` DESC limit 10";
 $stmt = $pdo->prepare($query);
 $stmt->execute();
 $books = $stmt->fetchAll();

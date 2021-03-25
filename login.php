@@ -21,7 +21,7 @@ require('includes/dbcon.rec.php');
                     <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
                          <path fill="currentColor" d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z" />
                     </svg>
-                    <input class="input-field" type="text" name="username" placeholder="Username / Email" required />
+                    <input class="input-field" type="email" name="username" placeholder="Email" required />
                </div>
                <div class="input__group">
                     <svg class="icon" style="width: 24px; height: 24px" viewBox="0 0 24 24">
