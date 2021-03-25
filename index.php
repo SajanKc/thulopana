@@ -40,11 +40,11 @@ $books = $stmt->fetchAll();
           </ul>
      </div>
      <div class="main">
-          <form class="main__area" method="GET" action="#">
+          <form class="main__area" method="GET" action="search.php?search=">
                <h2>Unlimited books, magazines <br />newspapers, and more.</h2>
                <div class="search">
-                    <input type="search" class="search__box" placeholder="i.e. Rich Dad Poor Dad" />
-                    <input class="btn-all" type="submit" value="Submit" name="submit" style="padding: 18px; cursor:pointer; border:none">
+                    <input type="search" name="q" class="search__box" value="<?php echo isset($_GET['q']) ? str_replace(' ', '%', strtolower(trim($_GET['q']))) : '' ?>" placeholder="i.e. Rich Dad Poor Dad" required />
+                    <input class="btn-all" type="submit" value="Search" name="" style="padding: 18px; cursor:pointer; border:none">
                </div>
                <h4>Search Books by Title / Author / ISBN</h4>
           </form>
