@@ -367,25 +367,22 @@ nav {
 /* Main Section */
 .hr__scroll {
 	display: flex;
-	overflow-y: hidden;
-	-ms-overflow-style: none; /* IE 11 */
-	scrollbar-width: none; /* Firefox 64 */
-}
-.hr__scroll::-webkit-scrollbar {
-	width: 0px;
+	flex-wrap: wrap;
+	padding: 0 4px;
+	justify-content: space-evenly;
 }
 .hr__scroll a {
-	margin: 15px 10px;
-}
-.hr__scroll a img {
-	max-width: 180px;
-	border-radius: 3px;
-}
-.hr__scroll a {
+	margin: 20px 10px;
+	width: 200px;
+	height: 300px;
+	position: relative;
 	transition: transform 0.5s;
 }
 .hr__scroll a img {
-	object-fit: contain;
+	width: 200px;
+	height: 300px;
+	border-radius: 3px;
+	position: absolute;
 }
 .hr__scroll a:hover {
 	transition: transform 0.3s;
@@ -886,7 +883,6 @@ nav {
 	height: 400px;
 	object-fit: contain;
 }
-
 /* dashboard css */
 .dashboard__heading {
 	display: flex;
@@ -901,7 +897,6 @@ nav {
 	color: var(--primary);
 	background-color: var(--secondary);
 }
-
 .userdetails__table th,
 .userdetails__table td {
 	border: 1px solid var(--primary);
