@@ -18,7 +18,7 @@
                $stmt->execute();
                $book = $stmt->fetch();
                if (!$book) {
-                    echo '<h2>No Book found with given id</h2>';
+                    echo '<h2>No Book found with id = ' . $bid . '</h2>';
                } else {
                     $q = "SELECT c.c_name FROM book b LEFT JOIN category c ON b.category = c.c_id WHERE b.b_id = :bookid";
                     $stmt = $pdo->prepare($q);
@@ -34,7 +34,7 @@
                               <div>
                                    <ul class="heading__info-list">
                                         <li>
-                                             <h2 class="heading__all"> <?php echo ucwords(strtolower($book['title'])) ?> </h2>
+                                             <h2 class="heading__all"> <?php echo '" ' . ucwords(strtolower($book['title'])) . ' "' ?> </h2>
                                         </li>
                                         <li> <span> ISBN: </span> <?php echo $book['isbn'] ?> </li>
                                         <li> <span> Category: </span> <?php echo $category['c_name'] ?> </li>
@@ -59,27 +59,34 @@
           <?php }
           } ?>
 
-          <section class="main__container">
-               <div class="container">
-                    <h2 class="heading__all">Similar Books</h2>
-                    <div class="hr__scroll">
-                         <?php
-                         $bcategory = $book['category'];
-                         $query = "SELECT * FROM `book` WHERE `category` = :bcategory AND `b_id` != :bid limit 5";
-                         $stmt = $pdo->prepare($query);
-                         $stmt->bindParam(':bcategory', $bcategory);
-                         $stmt->bindParam(':bid', $bid);
-                         $stmt->execute();
-                         $books = $stmt->fetchAll();
-                         foreach ($books as $book) {
-                              echo '<a href="view-book.php?id=' . $book['b_id'] . '">';
-                              echo '<img class="view-book" src="images/' . $book['image'] . '" />';
-                              echo '</a>';
-                         }
-                         ?>
+
+          <?php
+          if ($book) {
+               $bcategory = $book['category'];
+          }
+          $query = "SELECT `b_id`, `image` FROM `book` WHERE `category` = :bcategory AND `b_id` != :bid limit 5";
+          $stmt = $pdo->prepare($query);
+          $stmt->bindParam(':bcategory', $bcategory);
+          $stmt->bindParam(':bid', $bid);
+          $stmt->execute();
+          $books = $stmt->fetchAll();
+          if ($books) {
+          ?>
+               <section class="main__container">
+                    <div class="container">
+                         <h2 class="heading__all">Similar Books</h2>
+                         <div class="hr__scroll">
+                              <?php
+                              foreach ($books as $book) {
+                                   echo '<a href="view-book.php?id=' . $book['b_id'] . '">';
+                                   echo '<img class="view-book" src="images/' . $book['image'] . '" />';
+                                   echo '</a>';
+                              }
+                              ?>
+                         </div>
                     </div>
-               </div>
-          </section>
+               </section>
+          <?php } ?>
      </div>
 </body>
 
