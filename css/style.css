@@ -5,13 +5,6 @@
 	box-sizing: border-box;
 }
 html {
-	--primary: #fff;
-	--secondary: #000;
-	--red: #e50914;
-	--dark-red: #a30810;
-	scroll-behavior: smooth;
-}
-html[data-theme="light"] {
 	--primary: #ddd;
 	--secondary: #000;
 	--red: #e50914;
@@ -21,7 +14,6 @@ html[data-theme="light"] {
 body {
 	font-family: "EB Garamond", serif;
 	background-color: var(--primary);
-	/* color: var(--secondary); */
 	font-size: 1rem;
 	font-weight: 400;
 	letter-spacing: 0.5px;
@@ -893,4 +885,36 @@ nav {
 .view__book {
 	height: 400px;
 	object-fit: contain;
+}
+
+/* dashboard css */
+.dashboard__heading {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.userdetails__table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 10px 0;
+	color: var(--primary);
+	background-color: var(--secondary);
+}
+
+.userdetails__table th,
+.userdetails__table td {
+	border: 1px solid var(--primary);
+	padding: 10px;
+	white-space: nowrap;
+}
+.userdetails__table tr:hover {
+	background-color: var(--primary);
+	color: var(--secondary);
+}
+.userdetails__table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: var(--dark-red);
+	color: white;
 }
