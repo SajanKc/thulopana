@@ -44,7 +44,6 @@
                                         <li> <span> Price: </span> Rs. <?php echo $book['price'] ?> </li>
                                         <li style="margin-top:10px;">
                                              <a href="seller-details.php?id=" class="btn-all lsnone"> View Seller Details</a>
-                                             <a href="index.php" class="btn-all lsnone"> Home </a>
                                         </li>
                                    </ul>
                               </div>
