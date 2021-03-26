@@ -49,7 +49,7 @@ require_once("includes/dbcon.rec.php");
                     <div class="form__heading">
                          <h2 class="card__heading">Register</h2>
                          <p class="card__subheading">
-                              <a href="../index.php"> ThuloPana </a>
+                              <a href="index.php"> ThuloPana </a>
                          </p>
                     </div>
                     <div class="input__group">
