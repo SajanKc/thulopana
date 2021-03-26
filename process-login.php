@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 require_once("includes/dbcon.rec.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

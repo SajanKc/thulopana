@@ -1,3 +1,4 @@
+<?php require_once('includes/dbcon.rec.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +10,6 @@
      <?php include_once("includes/navbar.inc.php"); ?>
      <div class="container section-all">
           <?php
-          require_once('includes/dbcon.rec.php');
           if (isset($_GET['id']) && !empty($_GET['id'])) {
                $bid = $_GET['id'];
                $query = "SELECT * FROM `book` WHERE `b_id`=:id";
