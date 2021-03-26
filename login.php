@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 require('includes/dbcon.rec.php');
 ?>
 <!DOCTYPE html>
@@ -9,6 +9,7 @@ require('includes/dbcon.rec.php');
 </head>
 
 <body>
+     <?php include_once("includes/navbar.inc.php"); ?>
      <div class="login">
           <form class="login__card" action="process-login.php" method="POST">
                <div class="form__heading">
