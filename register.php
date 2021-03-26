@@ -8,6 +8,7 @@ require_once("includes/dbcon.rec.php");
 </head>
 
 <body>
+     <?php include_once("includes/navbar.inc.php"); ?>
      <?php
      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $query = "SELECT email FROM `user`";
