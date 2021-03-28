@@ -535,6 +535,9 @@ html.transition *:after {
 	background-color: var(--primary);
 	color: var(--secondary);
 }
+.userdetails__table tr:hover .icon {
+	color: var(--secondary);
+}
 .userdetails__table th {
 	padding-top: 12px;
 	padding-bottom: 12px;
@@ -542,3 +545,15 @@ html.transition *:after {
 	color: white;
 }
 /* Dashboard ended */
+.copyright {
+	float: right;
+}
+.ws__normal {
+	white-space: normal !important;
+}
+.table__image {
+	max-width: 100px;
+}
+.icon {
+	color: var(--primary);
+}
