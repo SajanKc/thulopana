@@ -18,11 +18,11 @@ require_once("includes/auth.php");
           </div>
 
           <div class="tab">
-               <button class="tablinks active" onclick="openData(event,'users');"> User Details </button>
-               <button class="tablinks" onclick="openData(event,'books');"> Book Details </button>
+               <button class="tablinks active" onclick="openData(event,'books');"> Book Details </button>
+               <button class="tablinks" onclick="openData(event,'users');"> User Details </button>
           </div>
 
-          <div id="users" class="tabcontent" style="display:block;">
+          <div id="users" class="tabcontent">
                <?php
                $query = "SELECT * FROM `user`";
                $stmt = $pdo->prepare($query);
@@ -78,17 +78,12 @@ require_once("includes/auth.php");
                </div>
           </div>
 
-          <div id="books" class="tabcontent">
-               <?php
-               $query = "SELECT * FROM `book`";
-               $stmt = $pdo->prepare($query);
-               $stmt->execute();
-               $books = $stmt->fetchAll();
-               ?>
+          <div id="books" class="tabcontent" style="display:block;">
                <div class="dashboard__heading">
                     <a class="btn-all" href="add-book.php"> Add Book </a>
                </div>
                <div style="overflow-x:auto;">
+                    <?php include("includes/pagination.inc.php"); ?>
                     <table class="userdetails__table">
                          <tr>
                               <th>SN</th>
@@ -102,7 +97,8 @@ require_once("includes/auth.php");
                               <th>Action</th>
                          </tr>
                          <?php $i = 1;
-                         foreach ($books as $book) { ?>
+                         foreach ($res_data as $book) { //$res_data from pagination page 
+                         ?>
                               <?php
                               $q = "SELECT c.c_name FROM book b LEFT JOIN category c ON b.category = c.c_id WHERE b.b_id = :bookid";
                               $stmt = $pdo->prepare($q);
@@ -139,7 +135,7 @@ require_once("includes/auth.php");
                               </tr>
                          <?php } ?>
                     </table>
-
+                    <?php include("includes/pagination.inc.php"); ?>
                </div>
           </div>
      </div>

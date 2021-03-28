@@ -2,6 +2,8 @@
 require_once("includes/dbcon.rec.php");
 require_once("includes/auth.php");
 ?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -20,16 +22,11 @@ require_once("includes/auth.php");
                     }  ?>
                </h2>
           </div>
-          <?php
-          $query = "SELECT * FROM `book`";
-          $stmt = $pdo->prepare($query);
-          $stmt->execute();
-          $books = $stmt->fetchAll();
-          ?>
           <div class="dashboard__heading">
                <a class="btn-all" href="add-book.php"> Add Book </a>
           </div>
           <div style="overflow-x:auto;">
+               <?php include("includes/pagination.inc.php"); ?>
                <table class="userdetails__table">
                     <tr>
                          <th>SN</th>
@@ -43,7 +40,7 @@ require_once("includes/auth.php");
                          <th>Action</th>
                     </tr>
                     <?php $i = 1;
-                    foreach ($books as $book) { ?>
+                    foreach ($res_data as $book) { ?>
                          <?php
                          $q = "SELECT c.c_name FROM book b LEFT JOIN category c ON b.category = c.c_id WHERE b.b_id = :bookid";
                          $stmt = $pdo->prepare($q);
@@ -80,6 +77,7 @@ require_once("includes/auth.php");
                          </tr>
                     <?php } ?>
                </table>
+               <?php include("includes/pagination.inc.php"); ?>
           </div>
      </div>
      <?php require_once("includes/footer.inc.php"); ?>

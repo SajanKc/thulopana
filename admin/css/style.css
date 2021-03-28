@@ -586,3 +586,10 @@ html.transition *:after {
 	border: 1px solid #ccc;
 	border-top: none;
 }
+/* Pagination Started */
+.pagination {
+	display: flex;
+	justify-content: space-between;
+	width: 200px;
+	float: right;
+}
