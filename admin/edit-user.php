@@ -6,10 +6,11 @@ require_once("includes/auth.php");
 <html>
 
 <head>
-     <?php include_once("../includes/head.inc.php"); ?>
+     <?php include_once("includes/head.inc.php"); ?>
 </head>
 
 <body>
+     <?php include_once("includes/navbar.inc.php") ?>
      <?php
      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $uid = $_POST['uid'];
