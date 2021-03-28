@@ -22,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $stmt->bindParam(':email', $email);
           $stmt->execute();
           $result = $stmt->fetch();
+          $role = $result['role'];
+          $_SESSION['role'] = $role;
           if ($result['role'] === 'admin') {
                echo '<h2>Admin logged in successfully</h2>';
                header('Refresh: 1; URL = admin/dashboard.php');
