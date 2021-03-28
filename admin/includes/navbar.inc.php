@@ -8,7 +8,7 @@ if (isset($_SESSION['logged_user'])) {
 <div class="container">
      <ul class="navbar">
           <li class="logo">
-               <h2><a style="font-size:4rem; color:white; text-shadow: 2px 2px 8px #FF0000;" href="index.php"> ThuloPana </a></h2>
+               <h2><a style="font-size:4rem; color:white; text-shadow: 2px 2px 8px #FF0000;" href="../index.php"> ThuloPana </a></h2>
           </li>
           <li>
                <?php if ($logged_user === 'guest' || $logged_user === "") {
