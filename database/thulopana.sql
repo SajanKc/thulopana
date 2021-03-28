@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `book` (
   `isbn` VARCHAR(25) NOT NULL,
   `title` VARCHAR(50) NOT NULL,
   `description` LONGTEXT NOT NULL,
-  `author` VARCHAR(40) NOT NULL,
+  `author` VARCHAR(200) NOT NULL,
   `category` INT NOT NULL,
   `type` VARCHAR(10) NOT NULL,
   `pages` INT NOT NULL,
@@ -83,7 +83,7 @@ ADD COLUMN `updated_at`
   ON UPDATE CURRENT_TIMESTAMP;
   
 -- Inserting data into book table
-INSERT INTO `book` (`b_id`, `user_id`, `isbn`, `title`, `description`, `author`, `category`, `type`, `pages`, `price`, `image`, `published_year`,`uploaded_at`, `updated_at`) 
+INSERT INTO `book` (`b_id`, `user_id`, `isbn`, `title`, `description`, `author`, `category`, `type`, `pages`, `price`, `image`, `published_year`, `uploaded_at`, `updated_at`) 
 VALUES
 (1, 3, '9937856345' , 'Seto Dharati', 'Seto Dharti is a novel written by Amar Neupane. 
 It received Madan Puraskar, which is the biggest literary award in Nepal. 
@@ -197,7 +197,56 @@ situation of the sports sector during his time. Unfortunately, both the situatio
 45-page prologue and 11 other chapters that tell the stories of his childhood, student life and career in army, the Maoist conflict, the royal take over, 
 and the events after the Maoists came to the peace process.',
 'Rookmangud Katawal', '12', 'new', 255, 280, 'upload_image/rookmangud K.jpg', 2018, now(), now());
-
+-- used
+INSERT INTO `book` (`b_id`, `user_id`, `isbn`, `title`, `description`, `author`, `category`, `type`, `pages`, `price`, `image`, `published_year`, `uploaded_at`, `updated_at`) 
+VALUES
+(25, 3, '9789937303545' , 'ECONOMICS- I', 'Economics is a popular subject. It is also an applied science. Many activities of our daily life are related with economics. 
+Economics has also significant role in national and international news. Economics is offered as a subject not only in humanities and social sciences but also in management,
+education and law. That could be the main reason why many students are attracted towards studying economics.',
+'Prof. Dr. Nav Raj Kanel, Dr. Madhav Prasad Dahal, Dr. Nar Bahadur Bista, Mani R Lamsal & Indra Pd. Bhusal',
+'12', 'used', 320, 220, 'upload_image/economic11.jpg', 2018, now(), now()),
+(26, 3, '9789937302814' , 'BUSINESS ECONOMICS II', 'Macroeconomic concepts and theories are widely applicable in managerial and business decision making. Managers of business organization involved 
+in the production of goods and services have to make decision on: What goods and services to produce? How to produce? For whom to produce? 
+Where to produce? They have to determine prices of their product. Likewise, they must make payment for various factors of production and resource suppliers.
+They have to adjust level of output and price of product considering governments tax and industrial policy changes. The study of macroeconomics helps 
+managers and entrepreneurs to make decision on these various issues.',
+'Prof. Dr. Nav Raj Kanel, Dr. Madhav Prasad Dahal', '13', 'used', 384, 280, 'upload_image/economic12.jpg', 2017, now(), now()),
+(27, 3, '9789937302395' , 'MICROECONOMICS', 'Microeconomic concepts and theories are widely applicable in the area of managerial and business decision making.
+Managers of firms involved in producing goods and services have to make decisions on: What goods and services to produce? 
+How to produce? Whom to produce? Where to produce? They have to determine prices of their products. Likewise, they must make payment
+for various factors of production and resource suppliers. The study of microeconomics helps managers to make decisions on 
+such various issues..',
+'Dr. Madhav Prasad Dahal, Prof. Snehalata Kafle, Mani Ratna Lamsal', '13', 'used', 385, 280, 'upload_image/Microeconomics.jpg', 2017, now(), now()),
+(28, 3, '9789937107242' , 'ADVANCED LEVEL CHEMISTRY CLASS XI', 'This book has been prepared according to the latest curriculum of Chemistry
+for Grade XI, prescribed by Government of Nepal',
+'Dr M L Sharma , Dr P N Chaudhary', '9', 'used', 654, 330, 'upload_image/ADVANCEDLEVELCHEMISTRYCLASSXI.jpg', 2018, now(), now()),
+(29, 3, '9789937106733' , 'ADVANCED LEVEL BIOLOGY CLASS XI', 'This book has been prepared according to the latest curriculum of Chemistry for Grade XI, 
+prescribed by Government of Nepal',
+'Dr Ras Bihari Mahato', '9', 'used', 638, 350, 'upload_image/ADVANCED LEVEL BIOLOGY CLASS XI.jpg', 2016, now(), now()),
+(30, 3, '9789937107457' , 'ADVANCED LEVEL PHYSICS CLASS XI', 'This book has been prepared according to the latest curriculum of Chemistry for Grade XI,
+prescribed by Government of Nepal','Dr Kabi Raj Bantawa , Prof Tika Bahadur Katuwal',
+'9', 'used',664, 300, 'upload_image/ADVANCEDLEVELPHYSICSCLASSXI.jpg', 2017, now(), now()),
+(31, 3, '9780062312686' , 'THE INTELLIGENT INVESTOR', 'The greatest investment advisor of the twentieth century, Benjamin Graham taught and inspired people worldwide. Grahams 
+philosophy of value investing -- which shields investors from substantial error and teaches them to develop long-term 
+strategies -- has made The Intelligent Investor the stock market bible ever since its original publication in 1949. Over the years, 
+market developments have proven the wisdom of Grahams strategies. While preserving the integrity of Grahams original text, this 
+revised edition includes updated.',
+'Benjamin Graham', '12', 'used', 454, 435, 'upload_image/TheintelligentInvestor.png',1945, now(), now()),
+(32, 3, '9781612680194' , 'RICH DAD POOR DAD', 'April 2017 marks 20 years since Robert Kiyosakis Rich Dad Poor Dad first made waves in the Personal Finance arena. 
+It has since become the #1 Personal Finance book of all time... translated into dozens of languages and sold around the world.
+Rich Dad Poor Dad is Roberts story of growing up with two dads -- his real father and the father of his best friend,his rich dad -- and the ways in which both men shaped his thoughts about money and investing. The book explodes the myth that 
+you need to earn a high income to be rich and explai',
+'Robert T. Kiyosaki', '12', 'used', 338, 450, 'upload_image/RichDadPoorDad.jpg', 2017, now(), now()),
+(33, 3, '9788184959420' , 'THINK AND GROW RICH', 'Think and Grow Rich! contains over 20 years of research into the lives and philosophies of more than 500 of the most successful 
+people in America. Most noteworthy is entrepreneur Andrew Carnegie’s secret to success, revealed to Napoleon Hill during private 
+interviews with Carnegie, the richest man of his time.This timeless classic presents a systematic nuts-and-bolts approach to developing 
+the skills and mind-set required to achieve exceptional success in any field or endeavor, personal or professional. Think and Grow Rich!.',
+'Napoleon Hill', '12', 'used',364, 150, 'upload_image/ThinkandGrowRich.jpg', 2018, now(), now()),
+(34, 3, '9788184957105' , 'THE SCIENCE OF SUCCESS', 'Napoleon Hill’s Proven Program for Prosperity and HappinessDISCOVER THE FORMULA FOR RICHESThe Science of Success is a collection of
+writings by and about Napoleon Hill, author of the most widely read book on personal prosperity philosophy ever published, Think and Grow Rich. 
+These essays, which contain teachings on the nature of prosperity and how to attain it, offer insight into the author’s popularity and engaging 
+style as a motivational speaker and writer, are published here in book form for the first time.',
+'Napoleon Hill', '12', 'used', 312, 280, 'upload_image/TheScienceofSuccess.jpg', 2018, now(), now());
 
   -- View all records of role table    
 SELECT * FROM book;
