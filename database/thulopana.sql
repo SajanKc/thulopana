@@ -7,14 +7,14 @@ USE thulopana;
 
 CREATE TABLE IF NOT EXISTS `user` (
 	`uid` INT NOT NULL AUTO_INCREMENT,
-    `username` VARCHAR(20) NOT NULL,
+	`username` VARCHAR(20) NOT NULL,
 	`password` VARCHAR(255) NOT NULL,
-    `email` VARCHAR(30) NOT NULL,
-    `phone` varchar(15) NOT NULL,
-    `role` INT NOT NULL,
-    `registered_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (`uid`),
-    FOREIGN KEY (`role`) REFERENCES role(`rid`)
+	`email` VARCHAR(30) NOT NULL,
+	`phone` varchar(15) NOT NULL,
+	`role` INT NOT NULL,
+	`registered_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`uid`),
+	FOREIGN KEY (`role`) REFERENCES role(`rid`)
 ) AUTO_INCREMENT = 5;
 
 -- On update 
@@ -39,15 +39,15 @@ INSERT INTO user VALUES
 
 CREATE TABLE IF NOT EXISTS `role` (
 	`rid` INT NOT NULL,
-    `role` VARCHAR(10) NOT NULL,
-    PRIMARY KEY (`rid`)
+	`role` VARCHAR(10) NOT NULL,
+	PRIMARY KEY (`rid`)
 ) AUTO_INCREMENT = 4;
 
 -- Inserting data into role table
 INSERT INTO role VALUES
 	(1,'admin'),
-    (2,'buyer'),
-    (3,'seller');
+	(2,'buyer'),
+	(3,'seller');
     
 -- View all records of role table    
 SELECT * FROM role;
@@ -74,7 +74,6 @@ CREATE TABLE IF NOT EXISTS `book` (
   FOREIGN KEY (`category`) REFERENCES category(`c_id`)
 ) AUTO_INCREMENT = 35 ;
 
-drop table book;
 
 -- On update 
 ALTER TABLE book
@@ -151,19 +150,19 @@ and field camps. He has read (or tried to read) their books, pestered them with 
 15 billion years of cosmic evolution and the development of science and civilization. Cosmos traces the origins of knowledge and the scientific 
 method, mixing science and philosophy, and speculates to the future of science. The book also discusses the underlying premises of science by 
 providing biographical anecdotes about many prominent scientists throughout history, placing their contributions into the broader context of the
- development of modern science. 
+development of modern science. 
 ','Carl Sagan', '9', 'new', 384, 4065, 'upload_image/Cosmos.jpg', 1980, now(), now()),
 (16, 4, '0618249060' , 'SILENT SPRING', 'Rachel Carson’s Silent Spring was first published in three serialized excerpts in the New Yorker in June of 1962.
- The book appeared in September of that year and the outcry that followed its publication forced the banning of DDT 
+The book appeared in September of that year and the outcry that followed its publication forced the banning of DDT 
 and spurred revolutionary changes in the laws affecting our air, land, and water. Carson’s passionate concern for the 
 future of our planet reverberated powerfully throughout the world, and her eloquent book was instrumental in launching 
 the environmental movement. It is without question one of the landmark books of the twentieth century. 
 ','Rachel Carson,', '9', 'new', 387, 2065, 'upload_image/SilentSpring.jpg', 2002, now(), now()),
 (17, 4, '978-9353065782 ' , 'INTRO TO JAVA PROGRAMMING', 'Daniel Liang teaches concepts of problem-solving and object-oriented programming using a fundamentals-first approach. 
 Beginning programmers learn critical problem-solving techniques then move on to grasp the key concepts of object-oriented,
- GUI programming, advanced GUI and Web programming using Java.
+GUI programming, advanced GUI and Web programming using Java.
 This title is a Pearson Global Edition. The Editorial team at Pearson has worked closely with educators around the world to
- include content which is especially relevant to students outside the United States. 
+include content which is especially relevant to students outside the United States. 
 ','Y. Daniel Liang', '7', 'new', 1344, 1950, 'upload_image/java.jpg', 2018, now(), now()),
 (18, 4, '978-9386052308 ' , 'CORE PYTHON PROGRAMMING', ' At present, Java occupies number 1 rank as the most used programming language since almost all the projects are developed
 in Java. Python is already occupying 2nd to 4th position and will be the most demanded language after Java in near future. 
@@ -173,26 +172,26 @@ their attention on Python.',
 'R. Nageswara Rao', '7', 'new', 904, 650, 'upload_image/python.jpg', 2018, now(), now()),
 (19, 4, '978-9351199076' , 'HTML 5 BLACK BOOK', ' HTML5 Black Book is the one-time reference book, written from the Web professional’s point of view, containing hundreds of examples and covering 
 nearly every aspect of HTML5. It will help you to master various Web technologies, other than HTML5, including CSS3, JavaScript, XML and AJAX.
- If you are a Web designer or developer, then this book is your introduction to new features and elements of HTML5, including audio and video 
+If you are a Web designer or developer, then this book is your introduction to new features and elements of HTML5, including audio and video 
 media elements, the canvas element for drawing, and many others.',
 'DT Editorial Services', '7', 'new', 1230,1000, 'upload_image/html.jpg', 2016, now(), now()),
 (20, 1, '978-9351199434' , 'CORE C', ' This book covers all concepts of C in an easy and simple language. The reader starts at the basic level and goes up to the higher
- levels as he/she gains knowledge of the concepts. This book also explains the logic behind each program, and thus instills logical
- thinking in the minds of the students. As this book contains hundreds of programs, it can be used by students of Indian universities t
+levels as he/she gains knowledge of the concepts. This book also explains the logic behind each program, and thus instills logical
+thinking in the minds of the students. As this book contains hundreds of programs, it can be used by students of Indian universities t
 o solve programs generally asked in their theory and lab examinations as part of the courses like B.C.A., B.Sc., M.Sc., M.C.A., B.E., B.Tech., M.Tech., etc.
 ','Dr. R. Nageswara Rao', '7', 'new', 560, 680, 'upload_image/c.jpg', 2016, now(), now()),
 (21, 1, '9789937910422' , 'Abiram Baburam', 'This is biographic account of Baburam Bhattarai who was Prime Minister of Nepal. It begins from the crescendo of the political life of Dr. Bhattarai when he decided to dissociate himself quietly from the Maoist party last year..',
- 'Anil Thapa', '12', 'new', 333, 350, 'upload_image/Baburam.jpg',2016, now(), now()), 
+'Anil Thapa', '12', 'new', 333, 350, 'upload_image/Baburam.jpg',2016, now(), now()), 
 (22, 1, '9937905834' , 'Binod Chaudhary', 'The autobiography covers Chaudharys life from a student at a government school in Gana Bahal, playing and growing in the streets of Khichapokhari,
- running a discotheque, pursuing a hobby as a singer and a filmmaker, leading the Nepali business community, expanding beyond Nepal and reaching
- a place where any other Nepali is yet to reach.','Binod Chaudhary', '12', 'new', 252, 250, 'upload_image/binodCdy.jpg', 2018, now(), now()), 
+running a discotheque, pursuing a hobby as a singer and a filmmaker, leading the Nepali business community, expanding beyond Nepal and reaching
+a place where any other Nepali is yet to reach.','Binod Chaudhary', '12', 'new', 252, 250, 'upload_image/binodCdy.jpg', 2018, now(), now()), 
 (23, 1, '9937921279' , 'Achyut Krishna Kharel', 'This book is an autobiography of Former IGP Achyut Krishna Kharel. 
 This autobiography reveals how football led him to the police force and then to lead the entire police force. 
 This book also reveals high profile cases like 33 kg gold smuggling, arrest of Former Police IGP DB Lama and former Prince Dhirendras 
 ADC Colonel Bharat Gurung to the hit and run case of musician Pravin Gurung and many more. Kharel has also written about political
- intervention in promotion and posting of police officers. IGP Kharels story accounts a life of a policeman and also portrays the pitiful 
+intervention in promotion and posting of police officers. IGP Kharels story accounts a life of a policeman and also portrays the pitiful 
 situation of the sports sector during his time. Unfortunately, both the situation remains indifferent after all these years.',
- 'Achyut Krishna Kharel', '12', 'new', 408, 450, 'upload_image/krishnaK.jpg', 2018, now(), now()),
+'Achyut Krishna Kharel', '12', 'new', 408, 450, 'upload_image/krishnaK.jpg', 2018, now(), now()),
 (24, 4, '993787407' , 'Rookmangud Katawal', 'This book is a story of former General of Nepalese Army. The book includes a sensational opening as 
 45-page prologue and 11 other chapters that tell the stories of his childhood, student life and career in army, the Maoist conflict, the royal take over, 
 and the events after the Maoists came to the peace process.',
