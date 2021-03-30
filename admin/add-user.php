@@ -10,6 +10,7 @@ require_once("includes/auth.php");
 </head>
 
 <body>
+     <?php include_once("includes/navbar.inc.php"); ?>
      <?php
      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $username = $_POST['username'];
