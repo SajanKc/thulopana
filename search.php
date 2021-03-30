@@ -49,7 +49,7 @@
                                    <td><?php echo $i++; ?></td>
                                    <td class="table__image"><?php echo '<img src="images/' . $book['image'] . '" />'; ?></td>
                                    <td class="ws__normal"><?php echo ucwords(strtolower($book['title'])) ?></td>
-                                   <td><?php echo ucwords(strtolower($book['author'])) ?></td>
+                                   <td class="ws__normal"><?php echo ucwords(strtolower($book['author'])) ?></td>
                                    <td class="ws__normal"><?php echo ucwords(strtolower($category['c_name'])) ?></td>
                                    <td><?php echo ucwords(strtolower($book['type'])) ?></td>
                                    <td><?php echo "Rs. " . $book['price'] ?></td>
