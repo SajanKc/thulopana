@@ -3,6 +3,7 @@ $logged_user = "";
 if (isset($_SESSION['logged_user'])) {
      $logged_user = $_SESSION['logged_user'];
      $role = $_SESSION['role'];
+     $uid = $_SESSION['uid'];
 }
 ?>
 <div class="container">
@@ -16,9 +17,11 @@ if (isset($_SESSION['logged_user'])) {
                } else {
                     echo '<h2 style="display:inline; background-color:red; padding:3.5px 5px; margin-right:5px; font-size:22px;">Welcome ' ?>
                     <?php if ($role === 'admin') {
-                         echo '<a href="admin/dashboard.php" style="color:white;">' . $logged_user . '</a>';
+                         echo '<a href="admin/dashboard.php" style="color:white;">' . ucwords(strtolower($logged_user)) . '</a>';
+                    } else if ($role === 'seller') {
+                         echo '<a href="' . 'dashboard.php?id=' . $uid . '" style="color:white;">' . ucwords(strtolower($logged_user)) . '</a>';
                     } else {
-                         echo $logged_user;
+                         echo ucwords(strtolower($logged_user));
                     }
                     ?>
                <?php echo '</h2>';

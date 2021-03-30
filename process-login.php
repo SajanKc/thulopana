@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      $username = $_POST['username'];
      $password = md5($_POST['password']);
 
-     $query = "SELECT `username`, `email` FROM user WHERE email=:email AND password=:pwd";
+     $query = "SELECT `uid`, `username`, `email` FROM user WHERE email=:email AND password=:pwd";
      $stmt = $pdo->prepare($query);
      $stmt->bindParam(':email', $email);
      $stmt->bindParam(':pwd', $password);
@@ -15,7 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
      if (!empty($user)) {
           $username = $user['username'];
+          $uid = $user['uid'];
           $_SESSION['logged_user'] = $username;
+          $_SESSION['uid'] = $uid;
           $email = $user['email'];
           $q = "SELECT * FROM user u LEFT JOIN role r ON u.role = r.rid WHERE u.email = :email";
           $stmt = $pdo->prepare($q);
@@ -29,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                header('Refresh: 1; URL = admin/dashboard.php');
           } else if ($result['role'] === "seller") {
                echo '<h2>Seller logged in successfully</h2>';
-               header('Refresh: 1; URL = dashboard.php?id=');
+               header('Refresh: 1; URL = dashboard.php?id=' . $user['uid']);
           } else {
                echo '<h2>Buyer logged in successfully</h2>';
                header('Refresh: 1; URL = index.php');

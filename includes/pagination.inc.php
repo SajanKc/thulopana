@@ -1,4 +1,5 @@
 <?php
+$uid = $_SESSION['uid'];
 if (isset($_GET['pageno'])) {
      $pageno = $_GET['pageno'];
 } else {
@@ -7,15 +8,27 @@ if (isset($_GET['pageno'])) {
 $no_of_records_per_page = 5;
 $offset = ($pageno - 1) * $no_of_records_per_page;
 
-$total_pages_sql = "SELECT COUNT(*) FROM book";
-$stmt = $pdo->prepare($total_pages_sql);
-$stmt->execute();
-$result = $stmt->fetch();
-$total_rows = $result[0];
-$total_pages = ceil($total_rows / $no_of_records_per_page);
+if ($_SESSION['role'] === "seller") {
+     $total_pages_sql = "SELECT COUNT(*) FROM book GROUP BY `user_id` HAVING `user_id` = :u_id";
+     $stmt = $pdo->prepare($total_pages_sql);
+     $stmt->bindParam(':u_id', $_SESSION['uid']);
+     $stmt->execute();
+     $result = $stmt->fetch();
+     $total_rows = $result[0];
+     $total_pages = ceil($total_rows / $no_of_records_per_page);
+     $sql = "SELECT * FROM book WHERE `user_id` = :u_id LIMIT $offset, $no_of_records_per_page ";
+} else {
+     $total_pages_sql = "SELECT COUNT(*) FROM book";
+     $stmt = $pdo->prepare($total_pages_sql);
+     $stmt->execute();
+     $result = $stmt->fetch();
+     $total_rows = $result[0];
+     $total_pages = ceil($total_rows / $no_of_records_per_page);
+     $sql = "SELECT * FROM book LIMIT $offset, $no_of_records_per_page";
+}
 
-$sql = "SELECT * FROM book LIMIT $offset, $no_of_records_per_page";
 $statement = $pdo->prepare($sql);
+$statement->bindParam(':u_id', $uid);
 $statement->execute();
 $res_data = $statement->fetchAll();
 ?>

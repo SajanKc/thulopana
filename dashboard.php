@@ -3,7 +3,6 @@ require_once("includes/dbcon.rec.php");
 require_once("includes/auth.php");
 ?>
 
-
 <!DOCTYPE html>
 <html>
 
@@ -15,12 +14,11 @@ require_once("includes/auth.php");
      <?php include_once("includes/navbar.inc.php"); ?>
      <div class="container">
           <div>
-               <h1 style="margin: 10px 0;">Seller Dashboard </h1>
-               <h2>
+               <h1 style="margin: 10px 0;">Seller Dashboard /
                     <?php if (isset($_SESSION)) {
-                         echo "Welcome " . $_SESSION['logged_user'];
+                         echo ucwords(strtolower($_SESSION['logged_user']));
                     }  ?>
-               </h2>
+               </h1>
           </div>
           <div class="dashboard__heading">
                <a class="btn-all" href="add-book.php"> Add Book </a>
@@ -52,7 +50,7 @@ require_once("includes/auth.php");
                               <td><?php echo $i++; ?></td>
                               <td class="table__image"><?php echo '<img src="images/' . $book['image'] . '" />'; ?></td>
                               <td class="ws__normal"><?php echo ucwords(strtolower($book['title'])) ?></td>
-                              <td><?php echo ucwords(strtolower($book['author'])) ?></td>
+                              <td class="ws__normal"><?php echo ucwords(strtolower($book['author'])) ?></td>
                               <td class="ws__normal"><?php echo ucwords(strtolower($category['c_name'])) ?></td>
                               <td><?php echo ucwords(strtolower($book['type'])) ?></td>
                               <td><?php echo "Rs. " . $book['price'] ?></td>
