@@ -24,8 +24,9 @@ require_once("includes/auth.php");
                <a class="btn-all" href="add-book.php"> Add Book </a>
           </div>
           <div style="overflow-x:auto;">
+               <input type="text" class="searchField" name="" id="searchField" placeholder="Search in table..." onkeyup="search();">
                <?php include("includes/pagination.inc.php"); ?>
-               <table class="userdetails__table">
+               <table class="userdetails__table" id="bookTable">
                     <tr>
                          <th>SN</th>
                          <th>Image</th>
@@ -79,6 +80,7 @@ require_once("includes/auth.php");
           </div>
      </div>
      <?php require_once("includes/footer.inc.php"); ?>
+     <script src="js/script.js"></script>
 </body>
 
 </html>

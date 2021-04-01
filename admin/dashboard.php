@@ -33,7 +33,8 @@ require_once("includes/auth.php");
                     <a class="btn-all" href="add-user.php"> Add User </a>
                </div>
                <div style="overflow-x:auto;">
-                    <table class="userdetails__table">
+                    <input type="text" class="searchField" name="" id="searchUser" placeholder="Search User in table..." onkeyup="searchUser();">
+                    <table class="userdetails__table" id="userTable">
                          <tr>
                               <th>#</th>
                               <th>Name</th>
@@ -83,8 +84,9 @@ require_once("includes/auth.php");
                     <a class="btn-all" href="add-book.php"> Add Book </a>
                </div>
                <div style="overflow-x:auto;">
+                    <input type="text" class="searchField" name="" id="searchBook" placeholder="Search book(s) in table..." onkeyup="searchBook();">
                     <?php include("includes/pagination.inc.php"); ?>
-                    <table class="userdetails__table">
+                    <table class="userdetails__table" id="bookTable">
                          <tr>
                               <th>SN</th>
                               <th>Image</th>
@@ -110,7 +112,7 @@ require_once("includes/auth.php");
                                    <td><?php echo $i++; ?></td>
                                    <td class="table__image"><?php echo '<img src="../images/' . $book['image'] . '" />'; ?></td>
                                    <td class="ws__normal"><?php echo ucwords(strtolower($book['title'])) ?></td>
-                                   <td><?php echo ucwords(strtolower($book['author'])) ?></td>
+                                   <td class="ws__normal"><?php echo ucwords(strtolower($book['author'])) ?></td>
                                    <td class="ws__normal"><?php echo ucwords(strtolower($category['c_name'])) ?></td>
                                    <td><?php echo ucwords(strtolower($book['type'])) ?></td>
                                    <td><?php echo "Rs. " . $book['price'] ?></td>
@@ -155,6 +157,7 @@ require_once("includes/auth.php");
                event.currentTarget.className += " active";
           }
      </script>
+     <script src="../js/script.js"> </script>
 </body>
 
 </html>
