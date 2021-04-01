@@ -43,7 +43,7 @@
                                         <li> <span> Pages: </span> <?php echo $book['pages'] ?> </li>
                                         <li> <span> Price: </span> Rs. <?php echo $book['price'] ?> </li>
                                         <li style="margin-top:10px;">
-                                             <a href="seller-details.php?id=<?php echo $book['user_id']; ?>" class="btn-all lsnone"> View Seller Details</a>
+                                             <a href="seller-details.php?id=<?php echo $book['user_id']; ?>" style="color:#fff;" class="btn-all lsnone"> View Seller Details</a>
                                         </li>
                                    </ul>
                               </div>
@@ -64,7 +64,7 @@
           if ($book) {
                $bcategory = $book['category'];
           }
-          $query = "SELECT `b_id`, `image` FROM `book` WHERE `category` = :bcategory AND `b_id` != :bid limit 5";
+          $query = "SELECT `b_id`, `image`, `type` FROM `book` WHERE `category` = :bcategory AND `b_id` != :bid limit 5";
           $stmt = $pdo->prepare($query);
           $stmt->bindParam(':bcategory', $bcategory);
           $stmt->bindParam(':bid', $bid);
@@ -79,6 +79,8 @@
                               <?php
                               foreach ($books as $book) {
                                    echo '<a href="view-book.php?id=' . $book['b_id'] . '">';
+                                   $type = ($book['type'] === 'new') ? 'New' : 'Used';
+                                   echo '<span class="book__type">' . $type . '</span>';
                                    echo '<img class="view-book" src="images/' . $book['image'] . '" />';
                                    echo '</a>';
                               }

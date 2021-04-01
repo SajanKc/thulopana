@@ -58,6 +58,8 @@ require_once("includes/auth.php");
                          <?php
                          foreach ($books as $book) {
                               echo '<a href="view-book.php?id=' . $book['b_id'] . '">';
+                              $type = ($book['type'] === 'new') ? 'New' : 'Used';
+                              echo '<span class="book__type">' . $type . '</span>';
                               echo '<img class="view-book" src="images/' . $book['image'] . '" />';
                               echo '</a>';
                          }
