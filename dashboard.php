@@ -24,7 +24,7 @@ require_once("includes/auth.php");
                <a class="btn-all" href="add-book.php"> Add Book </a>
           </div>
           <div style="overflow-x:auto;">
-               <input type="text" class="searchField" name="" id="searchField" placeholder="Search in table..." onkeyup="search();">
+               <input type="text" class="searchField" name="" id="searchBook" placeholder="Search in table..." onkeyup="searchBook();">
                <?php include("includes/pagination.inc.php"); ?>
                <table class="userdetails__table" id="bookTable">
                     <tr>

@@ -24,7 +24,8 @@
           if ($books) {
           ?>
                <div style="overflow-x:auto;">
-                    <table class="userdetails__table">
+                    <input type="text" class="searchField" name="" id="searchBook" placeholder="Search in table..." onkeyup="searchBook();">
+                    <table class="userdetails__table" id="bookTable">
                          <tr>
                               <th>SN</th>
                               <th>Image</th>
@@ -71,6 +72,7 @@
           }
           ?>
           <?php require_once("includes/footer.inc.php"); ?>
+          <script src="js/script.js"></script>
      </div>
 </body>
 
