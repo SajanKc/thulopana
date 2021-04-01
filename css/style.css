@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
 * {
 	margin: 0;
 	padding: 0;
@@ -104,46 +103,6 @@ svg:hover {
 	max-width: 1220px;
 	margin: 0 auto;
 	padding: 0 15px;
-}
-/* Theme Changer Css */
-.toggle__container {
-	position: absolute;
-	right: 0;
-	top: 80px;
-}
-.toggle__container input[type="checkbox"] {
-	height: 0;
-	width: 0;
-	visibility: hidden;
-}
-.toggle__container label {
-	cursor: pointer;
-	text-indent: -9999px;
-	width: 52px;
-	height: 27px;
-	background: grey;
-	float: right;
-	border-radius: 100px;
-	position: relative;
-	z-index: 99999;
-}
-.toggle__container label:after {
-	content: "";
-	position: absolute;
-	top: 3px;
-	left: 3px;
-	width: 20px;
-	height: 20px;
-	background: var(--red);
-	border-radius: 100%;
-	transition: 0.3s;
-}
-.toggle__container input:checked + label:after {
-	left: calc(100% - 5px);
-	transform: translateX(-100%);
-}
-.toggle__container label:active:after {
-	width: 45px;
 }
 html.transition,
 html.transition *,
@@ -621,6 +580,7 @@ html.transition *:after {
 	background-color: rgba(255, 255, 0, 0.623);
 	color: #000;
 	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
 	font-weight: bold;
 	border-radius: 3px;
 	border: 2px dashed #a30810;
