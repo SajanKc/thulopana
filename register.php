@@ -33,7 +33,7 @@ require_once("includes/dbcon.rec.php");
                     $stmt->bindParam(':roles', $role);
                     $stmt->bindParam(':pwd', $password);
                     $stmt->execute();
-                    echo '<h2>Registration Completed.</h2>';
+                    // echo '<h2>Registration Completed.</h2>';
                     header('Refresh: 1; URL = index.php');
                } else {
                     echo "<h1>Password did not matched. Try Again!!!</h1>";
@@ -76,7 +76,7 @@ require_once("includes/dbcon.rec.php");
                               <path fill="currentColor" d="M5,9.5L7.5,14H2.5L5,9.5M3,4H7V8H3V4M5,20A2,2 0 0,0 7,18A2,2 0 0,0 5,16A2,2 0 0,0 3,18A2,2 0 0,0 5,20M9,5V7H21V5H9M9,19H21V17H9V19M9,13H21V11H9V13Z" />
                          </svg>
                          <select class="input-field" name="role" id="role" required>
-                              <option value=""> Register As </option>
+                              <option value="" selected disabled hidden> Register As </option>
                               <option value="2"> Buyer </option>
                               <option value="3"> Seller </option>
                          </select>

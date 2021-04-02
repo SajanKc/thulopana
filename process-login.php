@@ -27,14 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $role = $result['role'];
           $_SESSION['role'] = $role;
           if ($result['role'] === 'admin') {
-               echo '<h2>Admin logged in successfully</h2>';
-               header('Refresh: 1; URL = admin/dashboard.php');
+               header('location:admin/dashboard.php');
           } else if ($result['role'] === "seller") {
-               echo '<h2>Seller logged in successfully</h2>';
-               header('Refresh: 1; URL = dashboard.php?id=' . $user['uid']);
+               header('location:dashboard.php?id=' . $user['uid']);
           } else {
-               echo '<h2>Buyer logged in successfully</h2>';
-               header('Refresh: 1; URL = index.php');
+               header('location:index.php');
           }
      } else {
           echo '<h2>Invalid Email or password !!! Try again !!!</h2>';

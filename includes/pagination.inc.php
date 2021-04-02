@@ -9,7 +9,7 @@ $no_of_records_per_page = 10;
 $offset = ($pageno - 1) * $no_of_records_per_page;
 
 if ($_SESSION['role'] === "seller") {
-     $total_pages_sql = "SELECT COUNT(*) FROM book GROUP BY `user_id` HAVING `user_id` = :u_id";
+     $total_pages_sql = "SELECT COUNT(*) FROM book where `user_id` = :u_id";
      $stmt = $pdo->prepare($total_pages_sql);
      $stmt->bindParam(':u_id', $_SESSION['uid']);
      $stmt->execute();

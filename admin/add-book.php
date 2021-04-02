@@ -27,9 +27,6 @@ require_once("includes/auth.php");
                     $publishedYear = $_POST['publishedYear'];
 
                     $imageFile = $_FILES['imageFile'];
-                    echo "<pre>";
-                    print_r($imageFile);
-                    echo "</pre>";
                     $fileName = $_FILES['imageFile']['name'];
                     $fileTmpName = $_FILES['imageFile']['tmp_name'];
                     $fileSize = $_FILES['imageFile']['size'];
@@ -66,7 +63,7 @@ require_once("includes/auth.php");
                                    $stmt->bindParam(':pubyear', $publishedYear);
                                    $stmt->execute();
                                    echo '<h2>Book added successfully</h2>';
-                                   // header('Refresh: 1; URL = dashboard.php');
+                                   header('Refresh: 1; URL = dashboard.php');
                               } else {
                                    echo "<h1> You file is too big!!! </h1>";
                               }

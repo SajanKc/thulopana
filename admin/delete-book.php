@@ -17,7 +17,6 @@ require_once("includes/auth.php");
           $stmt = $pdo->prepare($query);
           $stmt->bindParam(':id', $id);
           $stmt->execute();
-          echo '<h2>Deletinging book...</h2>';
           header('Refresh: 1; URL = dashboard.php');
      } else {
           echo '<h2>No record specified to delete.</h2>';
