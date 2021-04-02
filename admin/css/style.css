@@ -116,7 +116,6 @@ html.transition *:after {
 	position: relative;
 	display: flex;
 	width: 100%;
-	height: 50px;
 	min-height: 100px;
 	align-items: center;
 	justify-content: space-between;
@@ -301,6 +300,7 @@ html.transition *:after {
 	.main__area h2 {
 		font-size: 40px;
 		line-height: 60px;
+		margin-bottom: 10px;
 	}
 	.main__area h3 {
 		margin-top: 10px;
@@ -352,7 +352,6 @@ html.transition *:after {
 .register,
 .login {
 	background-color: var(--primary);
-	height: 100vh;
 }
 .register__card,
 .login__card {
@@ -360,10 +359,7 @@ html.transition *:after {
 	height: auto;
 	padding: 15px;
 	background-color: var(--secondary);
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	margin: 0 auto;
 	border-radius: 3px;
 	box-shadow: 0 16px 28px 0 rgb(0 0 0 / 22%), 0 25px 55px 0 rgb(0 0 0 / 21%);
 }
