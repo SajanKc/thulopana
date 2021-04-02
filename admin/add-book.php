@@ -65,7 +65,7 @@ require_once("includes/auth.php");
                                    echo '<h2>Book added successfully</h2>';
                                    header('Refresh: 1; URL = dashboard.php');
                               } else {
-                                   echo "<h1> You file is too big!!! </h1>";
+                                   echo "<h1> Your file is too big!!! </h1>";
                               }
                          } else {
                               echo "<h1> There was an error uploading your file!!! </h1> ";
