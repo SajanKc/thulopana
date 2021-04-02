@@ -6,7 +6,7 @@ require_once("includes/auth.php");
 <html>
 
 <head>
-     <?php include_once("../includes/head.inc.php"); ?>
+     <?php include_once("includes/head.inc.php"); ?>
 </head>
 
 <body>
