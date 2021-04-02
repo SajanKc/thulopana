@@ -14,7 +14,7 @@ $result = $stmt->fetch();
 $total_rows = $result[0];
 $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-$sql = "SELECT * FROM book LIMIT $offset, $no_of_records_per_page";
+$sql = "SELECT * FROM book ORDER BY `uploaded_at` DESC LIMIT $offset, $no_of_records_per_page";
 $statement = $pdo->prepare($sql);
 $statement->execute();
 $res_data = $statement->fetchAll();

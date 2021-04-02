@@ -16,7 +16,7 @@ if ($_SESSION['role'] === "seller") {
      $result = $stmt->fetch();
      $total_rows = $result[0];
      $total_pages = ceil($total_rows / $no_of_records_per_page);
-     $sql = "SELECT * FROM book WHERE `user_id` = :u_id LIMIT $offset, $no_of_records_per_page ";
+     $sql = "SELECT * FROM book WHERE `user_id` = :u_id ORDER BY `uploaded_at` DESC LIMIT $offset, $no_of_records_per_page ";
 } else {
      $total_pages_sql = "SELECT COUNT(*) FROM book";
      $stmt = $pdo->prepare($total_pages_sql);
