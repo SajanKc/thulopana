@@ -34,7 +34,10 @@ require('includes/dbcon.rec.php');
                     By logging an account you agree to our <br />
                     <a href="#">Terms & Privacy</a>.
                </p>
-               <input type="submit" class="btn btn-all register_btn" value="Login">
+               <p class="termsandcondition">
+                    <input type="submit" class="btn btn-all register_btn" value="Login">
+                    <a href="contact.php">Forget password?</a>
+               </p>
                <p class="form__footer">
                     <a href="register.php">Click here</a> to create free
                     account.
